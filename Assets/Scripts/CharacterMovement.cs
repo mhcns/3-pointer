@@ -4,9 +4,14 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpHeight = 1.5f;
-    [SerializeField] private float gravity = -20f;
+    [SerializeField]
+    private float moveSpeed = 5f;
+
+    [SerializeField]
+    private float jumpHeight = 1.5f;
+
+    [SerializeField]
+    private float gravity = -20f;
 
     private CharacterController characterController;
     private InputAction moveAction;
