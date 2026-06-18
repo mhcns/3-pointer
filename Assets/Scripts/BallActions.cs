@@ -8,10 +8,16 @@ public class BallActions : MonoBehaviour
     [SerializeField]
     private float interactionDistance = 3f;
 
+    [SerializeField]
+    private PhysicsMaterial groundMaterial;
+
     private Collider ballCollider;
     private Rigidbody ballRigidbody;
     private Transform grabbedBallReference;
     private bool isGrabbed;
+
+    public bool HasValidThrow { get; private set; }
+    public Vector3 ThrowOrigin { get; private set; }
 
     private void Awake()
     {
@@ -57,23 +63,45 @@ public class BallActions : MonoBehaviour
 
     public void Grab(Transform handReference)
     {
+        ResetScoring();
         isGrabbed = true;
         grabbedBallReference = handReference;
         ballCollider.enabled = false;
-        ballRigidbody.isKinematic = true;
-        ballRigidbody.useGravity = false;
         ballRigidbody.linearVelocity = Vector3.zero;
         ballRigidbody.angularVelocity = Vector3.zero;
+        ballRigidbody.isKinematic = true;
+        ballRigidbody.useGravity = false;
     }
 
-    public void Throw(Vector3 direction, float force)
+    public void Throw(Vector3 direction, float force, Vector3 throwOrigin)
     {
+        ThrowOrigin = throwOrigin;
+        HasValidThrow = true;
         isGrabbed = false;
         grabbedBallReference = null;
         ballCollider.enabled = true;
         ballRigidbody.isKinematic = false;
         ballRigidbody.useGravity = true;
         ballRigidbody.AddForce(direction * force, ForceMode.Impulse);
+    }
+
+    public void ConsumeThrow()
+    {
+        HasValidThrow = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.sharedMaterial == groundMaterial)
+        {
+            ResetScoring();
+        }
+    }
+
+    private void ResetScoring()
+    {
+        HasValidThrow = false;
+        ScoreManager.Instance?.ResetAllHoops();
     }
 
     private void OnTriggerEnter(Collider other)

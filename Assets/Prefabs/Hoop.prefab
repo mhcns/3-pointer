@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 5303476852951992353}
   - component: {fileID: 7169682530640156282}
   - component: {fileID: 6655816832191235784}
+  - component: {fileID: 2674169801234691101}
   m_Layer: 0
   m_Name: Point Trigger
   m_TagString: Untagged
@@ -304,6 +305,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 2.0000007, z: 1.0000005}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940699}
+--- !u!114 &2674169801234691101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721419813580568149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e66a07ac1864874950dd353dd16792e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  zone: 0
 --- !u!1 &4515360508949406380
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +749,7 @@ GameObject:
   - component: {fileID: 9019161961348748226}
   - component: {fileID: 5122295384785056944}
   - component: {fileID: 4989974656831643301}
+  - component: {fileID: 2674169801234691102}
   m_Layer: 0
   m_Name: Point Trigger (1)
   m_TagString: Untagged
@@ -827,10 +842,23 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 2.0000007, z: 1.0000005}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940699}
+--- !u!114 &2674169801234691102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6145336970456577597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e66a07ac1864874950dd353dd16792e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  zone: 1
 --- !u!1 &6156864446298440555
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +957,7 @@ GameObject:
   - component: {fileID: 3777370587894804217}
   - component: {fileID: 4905492048864770746}
   - component: {fileID: 5098886438306468276}
+  - component: {fileID: 2674169801234691103}
   m_Layer: 0
   m_Name: Point Trigger (2)
   m_TagString: Untagged
@@ -1025,6 +1054,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 2.0000007, z: 1.0000005}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940699}
+--- !u!114 &2674169801234691103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6711416116884097926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e66a07ac1864874950dd353dd16792e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  zone: 2
 --- !u!1 &7133232014275358611
 GameObject:
   m_ObjectHideFlags: 0
