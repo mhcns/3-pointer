@@ -583,6 +583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hoop (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7909598750039243031, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 9216326788365368186, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19
@@ -2066,9 +2070,53 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1159084138}
     m_Modifications:
+    - target: {fileID: 283934865787093532, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466613469968442580, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 479857147336353401, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 732642251794026949, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778157988075447104, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961766828301049914, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220357930787860855, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544598703699299284, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770634446446791232, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7133232014275358611, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
       propertyPath: m_Name
       value: Hoop
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909598750039243031, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909598750039243031, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 9216326788365368186, guid: 371cb9874e42a0c4cbc73aa763d63ce6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2128,6 +2176,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 581648722151084799, guid: 6cf305636b0ac2a438c331a5d3f8384e, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3269859788346183721, guid: 6cf305636b0ac2a438c331a5d3f8384e, type: 3}
       propertyPath: m_UseGravity
       value: 1

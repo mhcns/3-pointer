@@ -11,10 +11,29 @@ public class BallActions : MonoBehaviour
     [SerializeField]
     private PhysicsMaterial groundMaterial;
 
+    [Header("Bounce Sound")]
+    [SerializeField]
+    private AudioClip bounceSound;
+
+    [SerializeField]
+    private float minimumImpactSpeed = 1f;
+
+    [SerializeField]
+    private float maximumImpactSpeed = 12f;
+
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float minimumBounceVolume = 0.1f;
+
+    [SerializeField]
+    private float bounceSoundCooldown = 0.08f;
+
     private Collider ballCollider;
     private Rigidbody ballRigidbody;
+    private AudioSource audioSource;
     private Transform grabbedBallReference;
     private bool isGrabbed;
+    private float lastBounceSoundTime;
 
     public bool HasValidThrow { get; private set; }
     public Vector3 ThrowOrigin { get; private set; }
@@ -23,6 +42,7 @@ public class BallActions : MonoBehaviour
     {
         ballCollider = GetComponent<Collider>();
         ballRigidbody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -96,6 +116,33 @@ public class BallActions : MonoBehaviour
         {
             ResetScoring();
         }
+
+        if (collision.collider.GetComponentInParent<PlayerInteraction>() == null)
+        {
+            PlayBounceSound(collision.relativeVelocity.magnitude);
+        }
+    }
+
+    private void PlayBounceSound(float impactSpeed)
+    {
+        if (
+            bounceSound == null
+            || impactSpeed < minimumImpactSpeed
+            || Time.time < lastBounceSoundTime + bounceSoundCooldown
+        )
+        {
+            return;
+        }
+
+        float impactStrength = Mathf.InverseLerp(
+            minimumImpactSpeed,
+            maximumImpactSpeed,
+            impactSpeed
+        );
+        float volume = Mathf.Lerp(minimumBounceVolume, 1f, impactStrength);
+
+        audioSource.PlayOneShot(bounceSound, volume);
+        lastBounceSoundTime = Time.time;
     }
 
     private void ResetScoring()

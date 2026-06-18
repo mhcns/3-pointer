@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3141592361880140649}
   - component: {fileID: 999911891159227649}
   m_Layer: 0
-  m_Name: Ring (2)
+  m_Name: Ring Support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 6655816832191235784}
   - component: {fileID: 2674169801234691101}
   m_Layer: 0
-  m_Name: Point Trigger
+  m_Name: Point Trigger Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 4989974656831643301}
   - component: {fileID: 2674169801234691102}
   m_Layer: 0
-  m_Name: Point Trigger (1)
+  m_Name: Point Trigger Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -871,7 +871,7 @@ GameObject:
   - component: {fileID: 6598496060844659638}
   - component: {fileID: 8979418679552081358}
   m_Layer: 0
-  m_Name: Ring (1)
+  m_Name: Ring Support
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 5098886438306468276}
   - component: {fileID: 2674169801234691103}
   m_Layer: 0
-  m_Name: Point Trigger (2)
+  m_Name: Point Trigger Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -96,6 +96,7 @@ public class ScoreManager : MonoBehaviour
 
         AddPoints(distance < threePointDistance ? 2 : 3);
         state.scoreParticles?.Play(true);
+        state.scoreParticles?.GetComponent<AudioSource>()?.Play();
         ball.ConsumeThrow();
         ResetAllHoops();
     }
