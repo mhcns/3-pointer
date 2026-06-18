@@ -114,7 +114,11 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         float throwForce = Mathf.Lerp(minimumThrowForce, maximumThrowForce, charge);
-        grabbedBall.Throw(playerCamera.transform.forward, throwForce, transform.position);
+        grabbedBall.Throw(
+            playerCamera.transform.forward + (Vector3.up * 0.3f),
+            throwForce,
+            transform.position
+        );
         grabbedBall = null;
         charge = 0f;
         SetChargeImageVisible(false);
