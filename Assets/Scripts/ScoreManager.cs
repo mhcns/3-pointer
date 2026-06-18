@@ -20,6 +20,7 @@ public class ScoreManager : MonoBehaviour
         public ScoreTrigger topTrigger;
         public ScoreTrigger middleTrigger;
         public ScoreTrigger bottomTrigger;
+        public ParticleSystem scoreParticles;
         public bool enteredTop;
         public bool enteredMiddle;
         public bool enteredBottom;
@@ -94,6 +95,7 @@ public class ScoreManager : MonoBehaviour
         float distance = Vector2.Distance(throwPosition, hoopPosition);
 
         AddPoints(distance < threePointDistance ? 2 : 3);
+        state.scoreParticles?.Play(true);
         ball.ConsumeThrow();
         ResetAllHoops();
     }
@@ -116,6 +118,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         state = new HoopState();
+        state.scoreParticles = hoop.GetComponentInChildren<ParticleSystem>(true);
 
         foreach (ScoreTrigger hoopTrigger in hoop.GetComponentsInChildren<ScoreTrigger>(true))
         {
@@ -134,6 +137,12 @@ public class ScoreManager : MonoBehaviour
         }
 
         hoopStates.Add(hoop, state);
+
+        if (state.scoreParticles != null)
+        {
+            state.scoreParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+
         ResetHoop(state);
         return state;
     }
