@@ -78,10 +78,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private void TryGrabBall()
     {
-        if (
-            nearbyBall == null
-            || !interactAction.WasPressedThisFrame()
-            || !nearbyBall.PlayerIsAimingAtBall(playerCamera)
+        if (nearbyBall == null || !interactAction.WasPressedThisFrame()
+        //|| !nearbyBall.PlayerIsAimingAtBall(playerCamera)
         )
         {
             return;
@@ -116,7 +114,7 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         float throwForce = Mathf.Lerp(minimumThrowForce, maximumThrowForce, charge);
-        grabbedBall.Throw(playerCamera.transform.forward, throwForce);
+        grabbedBall.Throw(playerCamera.transform.forward, throwForce, transform.position);
         grabbedBall = null;
         charge = 0f;
         SetChargeImageVisible(false);
