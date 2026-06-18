@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -14,6 +15,9 @@ public class ScoreManager : MonoBehaviour
 
     private readonly Dictionary<Transform, HoopState> hoopStates = new();
     private int score;
+
+    public int Score => score;
+    public event Action<int> ScoreChanged;
 
     private class HoopState
     {
@@ -109,6 +113,14 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public void ResetScore()
+    {
+        score = 0;
+        UpdateScoreText();
+        ResetAllHoops();
+        ScoreChanged?.Invoke(score);
+    }
+
     private HoopState GetHoopState(ScoreTrigger trigger)
     {
         Transform hoop = trigger.Hoop;
@@ -163,6 +175,7 @@ public class ScoreManager : MonoBehaviour
     {
         score += points;
         UpdateScoreText();
+        ScoreChanged?.Invoke(score);
     }
 
     private void UpdateScoreText()

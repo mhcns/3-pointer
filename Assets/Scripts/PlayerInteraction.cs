@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -27,6 +28,9 @@ public class PlayerInteraction : MonoBehaviour
     private BallActions nearbyBall;
     private BallActions grabbedBall;
     private float charge;
+
+    public bool HasBall => grabbedBall != null;
+    public event Action BallThrown;
 
     private void Awake()
     {
@@ -76,6 +80,18 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    public void ForceGrabBall(BallActions ball)
+    {
+        if (grabbedBall != null)
+        {
+            return;
+        }
+
+        nearbyBall = null;
+        grabbedBall = ball;
+        grabbedBall.Grab(grabbedBallReference);
+    }
+
     private void TryGrabBall()
     {
         if (nearbyBall == null || !interactAction.WasPressedThisFrame()
@@ -122,6 +138,7 @@ public class PlayerInteraction : MonoBehaviour
         grabbedBall = null;
         charge = 0f;
         SetChargeImageVisible(false);
+        BallThrown?.Invoke();
     }
 
     private void SetChargeImageVisible(bool isVisible)

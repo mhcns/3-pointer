@@ -18,6 +18,8 @@ public class CharacterMovement : MonoBehaviour
     private InputAction jumpAction;
     private float verticalVelocity;
 
+    public bool MovementLocked { get; set; }
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -39,7 +41,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        Vector2 input = moveAction.ReadValue<Vector2>();
+        Vector2 input = MovementLocked ? Vector2.zero : moveAction.ReadValue<Vector2>();
         Vector3 horizontalMovement = transform.right * input.x + transform.forward * input.y;
 
         if (characterController.isGrounded && verticalVelocity < 0f)
@@ -57,5 +59,13 @@ public class CharacterMovement : MonoBehaviour
         Vector3 movement = horizontalMovement * moveSpeed;
         movement.y = verticalVelocity;
         characterController.Move(movement * Time.deltaTime);
+    }
+
+    public void Teleport(Transform destination)
+    {
+        characterController.enabled = false;
+        transform.SetPositionAndRotation(destination.position, destination.rotation);
+        characterController.enabled = true;
+        verticalVelocity = 0f;
     }
 }
