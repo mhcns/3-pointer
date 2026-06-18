@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveToHandSpeed: 8
-  interactionDistance: 3
   groundMaterial: {fileID: 13400000, guid: 8bc88379714dfe8428e165d2ef2813ca, type: 2}
   bounceSound: {fileID: 8300000, guid: 89571980246767a4b95f760af5b89f2e, type: 3}
   minimumImpactSpeed: 1

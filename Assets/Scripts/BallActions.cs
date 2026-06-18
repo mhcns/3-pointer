@@ -6,9 +6,6 @@ public class BallActions : MonoBehaviour
     private float moveToHandSpeed = 8f;
 
     [SerializeField]
-    private float interactionDistance = 3f;
-
-    [SerializeField]
     private PhysicsMaterial groundMaterial;
 
     [Header("Bounce Sound")]
@@ -61,26 +58,6 @@ public class BallActions : MonoBehaviour
         }
     }
 
-    public bool PlayerIsAimingAtBall(Camera playerCamera)
-    {
-        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
-
-        if (
-            Physics.Raycast(
-                ray,
-                out RaycastHit hit,
-                interactionDistance,
-                Physics.DefaultRaycastLayers,
-                QueryTriggerInteraction.Ignore
-            )
-        )
-        {
-            return hit.collider.transform == transform;
-        }
-
-        return false;
-    }
-
     public void Grab(Transform handReference)
     {
         ResetScoring();
@@ -103,6 +80,8 @@ public class BallActions : MonoBehaviour
         ballRigidbody.isKinematic = false;
         ballRigidbody.useGravity = true;
         ballRigidbody.AddForce(direction * force, ForceMode.Impulse);
+        Vector3 torqueDirection = Vector3.Cross(Vector3.up, direction).normalized;
+        ballRigidbody.AddTorque(torqueDirection * force * -0.05f, ForceMode.Impulse);
     }
 
     public void ConsumeThrow()

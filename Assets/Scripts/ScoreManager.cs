@@ -16,7 +16,6 @@ public class ScoreManager : MonoBehaviour
     private readonly Dictionary<Transform, HoopState> hoopStates = new();
     private int score;
 
-    public int Score => score;
     public event Action<int> ScoreChanged;
 
     private class HoopState
@@ -37,7 +36,7 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreText();
     }
 
-    public void TriggerEntered(ScoreTrigger trigger, BallActions ball)
+    public void TriggerEntered(ScoreTrigger trigger)
     {
         HoopState state = GetHoopState(trigger);
 
