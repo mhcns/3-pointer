@@ -94,9 +94,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void TryGrabBall()
     {
-        if (nearbyBall == null || !interactAction.WasPressedThisFrame()
-        //|| !nearbyBall.PlayerIsAimingAtBall(playerCamera)
-        )
+        if (nearbyBall == null || !interactAction.WasPressedThisFrame())
         {
             return;
         }

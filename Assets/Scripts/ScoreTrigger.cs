@@ -29,7 +29,7 @@ public class ScoreTrigger : MonoBehaviour
 
         if (ball != null)
         {
-            ScoreManager.Instance.TriggerEntered(this, ball);
+            ScoreManager.Instance.TriggerEntered(this);
         }
     }
 

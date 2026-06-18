@@ -6,9 +6,6 @@ public class BallActions : MonoBehaviour
     private float moveToHandSpeed = 8f;
 
     [SerializeField]
-    private float interactionDistance = 3f;
-
-    [SerializeField]
     private PhysicsMaterial groundMaterial;
 
     [Header("Bounce Sound")]
@@ -59,26 +56,6 @@ public class BallActions : MonoBehaviour
         {
             isGrabbed = false;
         }
-    }
-
-    public bool PlayerIsAimingAtBall(Camera playerCamera)
-    {
-        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
-
-        if (
-            Physics.Raycast(
-                ray,
-                out RaycastHit hit,
-                interactionDistance,
-                Physics.DefaultRaycastLayers,
-                QueryTriggerInteraction.Ignore
-            )
-        )
-        {
-            return hit.collider.transform == transform;
-        }
-
-        return false;
     }
 
     public void Grab(Transform handReference)
