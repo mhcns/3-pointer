@@ -4,12 +4,23 @@ using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [SerializeField] private Camera playerCamera;
-    [SerializeField] private Transform grabbedBallReference;
-    [SerializeField] private Image throwChargeImage;
-    [SerializeField] private float chargeDuration = 1.5f;
-    [SerializeField] private float minimumThrowForce = 5f;
-    [SerializeField] private float maximumThrowForce = 15f;
+    [SerializeField]
+    private Camera playerCamera;
+
+    [SerializeField]
+    private Transform grabbedBallReference;
+
+    [SerializeField]
+    private Image throwChargeImage;
+
+    [SerializeField]
+    private float chargeDuration = 1.5f;
+
+    [SerializeField]
+    private float minimumThrowForce = 5f;
+
+    [SerializeField]
+    private float maximumThrowForce = 15f;
 
     private InputAction interactAction;
     private InputAction attackAction;
