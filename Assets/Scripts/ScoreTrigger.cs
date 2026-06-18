@@ -16,7 +16,7 @@ public class ScoreTrigger : MonoBehaviour
     private Collider triggerCollider;
 
     public TriggerZone Zone => zone;
-    public Transform Hoop => transform.parent;
+    public Transform Hoop => transform.parent.parent;
 
     private void Awake()
     {
