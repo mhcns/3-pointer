@@ -103,6 +103,8 @@ public class BallActions : MonoBehaviour
         ballRigidbody.isKinematic = false;
         ballRigidbody.useGravity = true;
         ballRigidbody.AddForce(direction * force, ForceMode.Impulse);
+        Vector3 torqueDirection = Vector3.Cross(Vector3.up, direction).normalized;
+        ballRigidbody.AddTorque(torqueDirection * force * -0.05f, ForceMode.Impulse);
     }
 
     public void ConsumeThrow()

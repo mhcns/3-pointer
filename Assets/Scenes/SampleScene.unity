@@ -1584,13 +1584,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168409822}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 10.463, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1575891750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,6 +2281,10 @@ PrefabInstance:
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 581648722151084799, guid: 6cf305636b0ac2a438c331a5d3f8384e, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3269859788346183721, guid: 6cf305636b0ac2a438c331a5d3f8384e, type: 3}
       propertyPath: m_UseGravity
       value: 1
@@ -2333,6 +2337,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8815133152048460116, guid: 6cf305636b0ac2a438c331a5d3f8384e, type: 3}
+      propertyPath: bounceSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e00b4c21225d28d4594257f9b7a6a070, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
